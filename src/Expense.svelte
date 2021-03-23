@@ -3,13 +3,18 @@
   export let name = "";
   export let amount = 0;
   let displayAmount = false;
+  function toggleAmount() {
+    displayAmount = !displayAmount;
+  }
 </script>
 
 <article class="single-expense">
   <div class="expense-info">
     <h2>
       {name}
-      <button class="amount-btn"> <i class="fas fa-caret-down" /> </button>
+      <button on:click={toggleAmount} class="amount-btn">
+        <i class="fas fa-caret-down" />
+      </button>
     </h2>
     {#if displayAmount}
       <h4>amount: ${amount}</h4>
