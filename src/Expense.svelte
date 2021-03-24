@@ -3,6 +3,7 @@
   export let name = "";
   export let amount = 0;
   let displayAmount = false;
+  export let removeExpense;
   function toggleAmount() {
     displayAmount = !displayAmount;
   }
@@ -22,6 +23,8 @@
   </div>
   <div class="expense-buttons">
     <button class="expense-btn edit-btn"> <i class="fas fa-pen" /> </button>
-    <button class="expense-btn delete-btn"> <i class="fas fa-trash" /> </button>
+    <button on:click={() => removeExpense(id)} class="expense-btn delete-btn">
+      <i class="fas fa-trash" />
+    </button>
   </div>
 </article>
