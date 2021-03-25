@@ -1,15 +1,21 @@
 <script>
+  import expenses from "./expenses";
   import Title from "./Title.svelte";
   // variables
-  let name = "";
-  let amount = null;
+  export let name = "";
+  export let amount = null;
   export let addExpense;
+  export let isEditing;
+  export let editExpense;
   // reactive
-  // $: console.log({ name, amount });
   $: isEmpty = !name || !amount;
   // functions
   function handleSubmit(e) {
-    addExpense({ name, amount });
+    if (isEditing) {
+      editExpense({ name, amount });
+    } else {
+      addExpense({ name, amount });
+    }
     name = "";
     amount = null;
   }
@@ -34,7 +40,7 @@
       class="btn btn-block"
       disabled={isEmpty}
       class:disabled={isEmpty}>
-      add expense
+      {#if isEditing}edit expense{:else}add expense{/if}
     </button>
     <button type="button" class="close-btn">
       <i class="fas fa-times" />
