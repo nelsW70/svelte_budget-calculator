@@ -7,6 +7,7 @@
   export let addExpense;
   export let isEditing;
   export let editExpense;
+  export let hideForm;
   // reactive
   $: isEmpty = !name || !amount;
   // functions
@@ -42,7 +43,7 @@
       class:disabled={isEmpty}>
       {#if isEditing}edit expense{:else}add expense{/if}
     </button>
-    <button type="button" class="close-btn">
+    <button type="button" class="close-btn" on:click={hideForm}>
       <i class="fas fa-times" />
       close
     </button>
