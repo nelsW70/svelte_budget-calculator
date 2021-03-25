@@ -3,12 +3,13 @@
   // variables
   let name = "";
   let amount = null;
+  export let addExpense;
   // reactive
   // $: console.log({ name, amount });
   $: isEmpty = !name || !amount;
   // functions
   function handleSubmit(e) {
-    console.log({ name, amount });
+    addExpense({ name, amount });
     name = "";
     amount = null;
   }
