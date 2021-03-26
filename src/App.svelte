@@ -6,7 +6,7 @@
 	import Totals from "./Totals.svelte";
 	import ExpenseForm from "./ExpenseForm.svelte";
 	import Modal from "./Modal.svelte";
-	// data
+	// local data
 	// import expensesData from "./expenses";
 	// variables
 	let expenses = [];
