@@ -26,15 +26,18 @@
       </button>
     </h2>
     {#if displayAmount}
+      <!-- basic options -->
       <!-- <h4 transition:blur>amount: ${amount}</h4>
-      <h4 transition:scale>amount: ${amount}</h4>
-      <h4 transition:slide>amount: ${amount}</h4> -->
+        <h4 transition:scale>amount: ${amount}</h4>
+        <h4 transition:slide>amount: ${amount}</h4> -->
       <!-- <h4 transition:fade>amount: ${amount}</h4> -->
-      <h4
-        in:fly={{ x: -20, y: -20, duration: 500, delay: 500, easing: quintOut }}
-        out:slide>
-        amount: ${amount}
-      </h4>
+      <!-- <h4
+          in:fly={{ x: -20, y: -20, duration: 500, delay: 500, easing: quintOut }}
+          out:slide>
+          amount: ${amount}
+        </h4> -->
+      <!-- basic options -->
+      <h4 transition:slide>amount: ${amount}</h4>
     {/if}
   </div>
   <div class="expense-buttons">
