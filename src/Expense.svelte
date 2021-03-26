@@ -1,7 +1,8 @@
 <script>
   // modules
-  import { blur, slide, scale, fade, fly } from "svelte/transition";
   import { getContext } from "svelte";
+  import { blur, slide, scale, fade, fly } from "svelte/transition";
+  import { quintOut } from "svelte/easing";
   // variables
   export let id;
   export let name = "";
@@ -29,7 +30,10 @@
       <h4 transition:scale>amount: ${amount}</h4>
       <h4 transition:slide>amount: ${amount}</h4> -->
       <!-- <h4 transition:fade>amount: ${amount}</h4> -->
-      <h4 transition:fly>amount: ${amount}</h4>
+      <h4
+        transition:fly={{ x: -20, y: -20, duration: 2000, delay: 500, easing: quintOut }}>
+        amount: ${amount}
+      </h4>
     {/if}
   </div>
   <div class="expense-buttons">
