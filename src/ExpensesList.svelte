@@ -1,6 +1,7 @@
 <script>
   // modules
   import { fly } from "svelte/transition";
+  import { flip } from "svelte/animate";
   // components
   import Title from "./Title.svelte";
   import Expense from "./Expense.svelte";
@@ -17,8 +18,11 @@
 <section>
   <Title title="expense list" />
   <ul>
-    {#each expenses as expense, index}
-      <div transition:fly={{ x: 200, delay: (index + 1) * 500 }}>
+    {#each expenses as expense, index (expense.id)}
+      <div
+        in:fly={{ x: 200, delay: (index + 1) * 500 }}
+        out:fly={{ x: -200 }}
+        animate:flip>
         <Expense {...expense} />
       </div>
     {:else}
