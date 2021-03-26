@@ -31,7 +31,8 @@
       <h4 transition:slide>amount: ${amount}</h4> -->
       <!-- <h4 transition:fade>amount: ${amount}</h4> -->
       <h4
-        transition:fly={{ x: -20, y: -20, duration: 2000, delay: 500, easing: quintOut }}>
+        in:fly={{ x: -20, y: -20, duration: 500, delay: 500, easing: quintOut }}
+        out:slide>
         amount: ${amount}
       </h4>
     {/if}
