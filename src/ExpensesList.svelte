@@ -1,6 +1,10 @@
 <script>
+  // modules
+  import { fly } from "svelte/transition";
+  // components
   import Title from "./Title.svelte";
   import Expense from "./Expense.svelte";
+  // variables
   export let expenses = [];
 </script>
 
@@ -13,8 +17,10 @@
 <section>
   <Title title="expense list" />
   <ul>
-    {#each expenses as expense}
-      <Expense {...expense} />
+    {#each expenses as expense, index}
+      <div transition:fly={{ x: 200, delay: (index + 1) * 500 }}>
+        <Expense {...expense} />
+      </div>
     {:else}
       <h2>no expenses added to the list!</h2>
     {/each}
