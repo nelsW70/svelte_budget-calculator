@@ -3,10 +3,7 @@
 
 <div class="modal-container">
   <div class="modal-content">
-    <slot name="header">
-      <!-- optional fallback -->
-    </slot>
-    <slot name="footer">
+    <slot>
       <!-- optional fallback -->
     </slot>
   </div>

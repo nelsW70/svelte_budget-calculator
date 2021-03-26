@@ -70,7 +70,6 @@
 			: [];
 	});
 	afterUpdate(() => {
-		console.log("after update");
 		setLocalStorage();
 	});
 </script>
@@ -78,13 +77,15 @@
 <Navbar {showForm} />
 <main class="content">
 	{#if isFormOpen}
-		<ExpenseForm
-			{addExpense}
-			name={setName}
-			amount={setAmount}
-			{isEditing}
-			{editExpense}
-			{hideForm} />
+		<Modal>
+			<ExpenseForm
+				{addExpense}
+				name={setName}
+				amount={setAmount}
+				{isEditing}
+				{editExpense}
+				{hideForm} />
+		</Modal>
 	{/if}
 	<Totals title="total expenses" {total} />
 	<ExpensesList {expenses} />
@@ -95,10 +96,3 @@
 		clear expenses
 	</button>
 </main>
-<Modal>
-	<h1 slot="header">hello world</h1>
-	<p slot="footer">
-		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores at odio,
-		ab corporis veniam atque.
-	</p>
-</Modal>
