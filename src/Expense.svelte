@@ -1,4 +1,6 @@
 <script>
+  // modules
+  import { blur, slide, scale, fade, fly } from "svelte/transition";
   import { getContext } from "svelte";
   // variables
   export let id;
@@ -23,7 +25,11 @@
       </button>
     </h2>
     {#if displayAmount}
-      <h4>amount: ${amount}</h4>
+      <!-- <h4 transition:blur>amount: ${amount}</h4>
+      <h4 transition:scale>amount: ${amount}</h4>
+      <h4 transition:slide>amount: ${amount}</h4> -->
+      <!-- <h4 transition:fade>amount: ${amount}</h4> -->
+      <h4 transition:fly>amount: ${amount}</h4>
     {/if}
   </div>
   <div class="expense-buttons">
